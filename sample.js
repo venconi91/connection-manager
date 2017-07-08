@@ -1,8 +1,41 @@
 const connectionManager = require('./');
-console.log('disabled')
-connectionManager.disableConnection();
 
-setTimeout(() => {
-   connectionManager.enableConnection();
-   console.log('enabled');
-}, 5000);
+connectionManager.isConnected()
+    .then((connected) => {
+        console.log(connected)
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+    .then(() => {
+        connectionManager.disableConnection();
+    })
+    .then(() => {
+        return connectionManager.isConnected()
+            .then((connected) => {
+                console.log(connected)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    })
+    .then(() => {
+        setTimeout(() => {
+            Promise
+                .resolve()
+                .then(() => {
+                    connectionManager.enableConnection();
+                })
+                .then(() => {
+                    setTimeout(() => {
+                        connectionManager.isConnected()
+                            .then((connected) => {
+                                console.log(connected)
+                            })
+                            .catch((err) => {
+                                console.log(err)
+                            })
+                    }, 8000)
+                })
+        }, 5000);
+    })
