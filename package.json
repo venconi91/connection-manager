@@ -1,23 +1,23 @@
 {
-  "name": "connection-manager",
-  "version": "0.0.1",
-  "description": "library which can manipulate internet connection",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/venconi91/connection-manager.git"
-  },
-  "keywords": [
-    "internet",
-    "connection"
-  ],
-  "author": "Ventsislav Arsov",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/venconi91/connection-manager/issues"
-  },
-  "homepage": "https://github.com/venconi91/connection-manager#readme"
+    "name": "connection-manager",
+    "version": "0.0.1",
+    "description": "library which can manipulate internet connection",
+    "main": "index.js",
+    "scripts": {
+        "test": "node ./test/simpleTest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/venconi91/connection-manager.git"
+    },
+    "keywords": [
+        "internet",
+        "connection"
+    ],
+    "author": "Ventsislav Arsov",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/venconi91/connection-manager/issues"
+    },
+    "homepage": "https://github.com/venconi91/connection-manager#readme"
 }
