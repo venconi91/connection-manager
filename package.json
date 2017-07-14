@@ -1,6 +1,6 @@
 {
     "name": "connection-manager",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "library which can manipulate internet connection",
     "main": "index.js",
     "scripts": {
