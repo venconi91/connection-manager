@@ -10,7 +10,7 @@ connectionManager.isConnected()
         assert.fail(err);
     })
     .then(() => {
-        connectionManager.disableConnection();
+        return connectionManager.disableConnection();
     })
     .then(() => {
         return connectionManager.isConnected()
@@ -22,22 +22,20 @@ connectionManager.isConnected()
             })
     })
     .then(() => {
-        setTimeout(() => {
-            Promise
-                .resolve()
-                .then(() => {
-                    connectionManager.enableConnection();
-                })
-                .then(() => {
-                    setTimeout(() => {
-                        connectionManager.isConnected()
-                            .then((connected) => {
-                                assert.ok(connected);
-                            })
-                            .catch((err) => {
-                                assert.fail('should be connected');
-                            })
-                    }, 8000)
-                })
-        }, 5000);
+        Promise
+            .resolve()
+            .then(() => {
+                return connectionManager.enableConnection();
+            })
+            .then(() => {
+                setTimeout(() => {
+                    connectionManager.isConnected()
+                        .then((connected) => {
+                            assert.ok(connected);
+                        })
+                        .catch((err) => {
+                            assert.fail('should be connected');
+                        })
+                }, 8000)
+            })
     })
